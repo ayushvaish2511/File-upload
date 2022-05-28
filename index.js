@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const multer = require("multer");
 const cors = require("cors");
-const port = 8080;
 const fs = require("fs");
 const imageModel = require("./models");
 const path = require('path');
@@ -60,6 +59,6 @@ app.get('/',async (req,res)=>{
   res.json(allData)
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 8080, () => {
   console.log("server running successfully");
 });
